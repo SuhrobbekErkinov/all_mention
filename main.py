@@ -3,8 +3,11 @@ import sqlite3
 from datetime import datetime, timedelta
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
-
+import os
+from dotenv import load_dotenv
 # Enable logging
+load_dotenv()
+
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
@@ -12,7 +15,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Replace with your bot token
-BOT_TOKEN = "7560666259:AAH2yydIx4eetpwXYESdD-AZb3E1LlS2ouI"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 
 # Database setup
